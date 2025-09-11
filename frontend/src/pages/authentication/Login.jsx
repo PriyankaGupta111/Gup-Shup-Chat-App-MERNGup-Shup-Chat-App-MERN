@@ -41,7 +41,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br bg-slate-900">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-purple-600 to-indigo-700">
       <div className="max-w-md w-full bg-base-100 shadow-2xl rounded-2xl p-8 flex flex-col gap-6">
         
         {/* Title */}
@@ -101,94 +101,4 @@ const Login = () => {
 
 export default Login;
 
-// import React, { useEffect, useState } from "react";
-// import { FaUser } from "react-icons/fa";
-// import { IoKeySharp } from "react-icons/io5";
-// import { Link, useNavigate } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
-// import { loginUserThunk } from "../../store/slice/user/user.thunk";
-
-// const Login = () => {
-//   const navigate = useNavigate();
-//   const dispatch = useDispatch();
-//   const { isAuthenticated } = useSelector((state) => state.userReducer);
-
-//   const [loginData, setLoginData] = useState({
-//     username: "",
-//     password: "",
-//   });
-//   const [loading, setLoading] = useState(false); // <-- NEW
-
-//   useEffect(() => {
-//     if (isAuthenticated) navigate("/");
-//   }, [isAuthenticated, navigate]);
-
-//   const handleInputChange = (e) => {
-//     setLoginData((prev) => ({
-//       ...prev,
-//       [e.target.name]: e.target.value,
-//     }));
-//   };
-
-//   const handleLogin = async () => {
-//     setLoading(true); // start loading
-//     const response = await dispatch(loginUserThunk(loginData));
-//     setLoading(false); // stop loading
-
-//     if (response?.payload?.success) {
-//       navigate("/");
-//     }
-//   };
-
-//   return (
-//     <div className="flex justify-center items-center p-6 min-h-screen">
-//       <div className="max-w-[40rem] w-full flex flex-col gap-5 bg-base-200 p-6 rounded-lg">
-//         <h2 className="text-2xl font-semibold">Please Login..!!</h2>
-
-//         <label className="input input-bordered flex items-center gap-2 w-full">
-//           <FaUser />
-//           <input
-//             type="text"
-//             name="username"
-//             className="grow"
-//             placeholder="Username"
-//             onChange={handleInputChange}
-//           />
-//         </label>
-
-//         <label className="input input-bordered flex items-center gap-2 w-full">
-//           <IoKeySharp />
-//           <input
-//             type="password"
-//             name="password"
-//             placeholder="Password"
-//             className="grow"
-//             onChange={handleInputChange}
-//           />
-//         </label>
-
-//         <button
-//           onClick={handleLogin}
-//           className="btn btn-primary flex justify-center"
-//           disabled={loading} // disable while loading
-//         >
-//           {loading ? (
-//             <span className="loading loading-spinner loading-sm"></span>
-//           ) : (
-//             "Login"
-//           )}
-//         </button>
-
-//         <p>
-//           Don't have an account? &nbsp;
-//           <Link to="/signup" className="text-blue-400 underline">
-//             Sign Up
-//           </Link>
-//         </p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Login;
 
